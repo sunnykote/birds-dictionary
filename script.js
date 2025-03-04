@@ -1,14 +1,12 @@
-// Get the container where data will be displayed
-const container = document.getElementById("data-container");
-
-// Iterate through the JSON data and display it
-data.forEach(item => {
-    const row = document.createElement("div");
-    row.innerHTML = `
-        <p><strong>Лацінская назва:</strong> ${item["Лацінская назва"]}</p>
-        <p><strong>Руская назва:</strong> ${item["Руская назва"]}</p>
-        <p><strong>Беларуская назва:</strong> ${item["Беларуская назва"]}</p>
-        <hr>
-    `;
-    container.appendChild(row);
-});
+window.onload = function () {
+    const birdsList = document.createElement('ul'); // Create a list for the birds
+    birdsData.forEach(bird => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>Лацінская назва:</strong> ${bird["Лацінская  назва"]} <br>
+                     <strong>Русская назва:</strong> ${bird["Руская назва"]} <br>
+                     <strong>Беларуская назва:</strong> ${bird["Беларуская назва"]}`;
+      birdsList.appendChild(li);
+    });
+    document.body.appendChild(birdsList); // Add the list to the body
+  };
+  
